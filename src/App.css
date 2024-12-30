@@ -1,0 +1,439 @@
+/* General reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #4e54c8; /* Set a constant background color for light theme */
+  color: #f0f0f0; /* Default text color for light theme */
+  transition: background-color 0.3s ease, color 0.3s ease; /* Smooth transition */
+}
+
+.app-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+}
+
+/* Light Theme */
+.light {
+  background-color: #f0f0f0;
+  color: #333;
+}
+
+/* Dark Theme */
+.dark {
+  background-color: #333;
+  color: #f0f0f0;
+}
+
+/* Theme switcher styles */
+.theme-switcher {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  border-radius: 50%;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #4e4376;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+}
+
+/* Auth Form styles */
+.auth-container {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 380px; /* Set a fixed width for the form */
+}
+
+.form-wrapper {
+  width: 100%;
+}
+
+.tabs {
+  display: flex;
+  justify-content: space-between;  /* Add space between the tabs */
+  margin-bottom: 30px;
+}
+
+.tab {
+  flex: 1;  /* Make the tabs equal width */
+  padding: 15px;
+  border: 2px solid #4e4376;
+  cursor: pointer;
+  font-size: 18px;
+  text-align: center;
+  transition: all 0.3s ease;
+  background-color: #f7f7f7;
+  color: #4e4376;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+.tab.active {
+  background-color: #4e4376; /* Active tab gets a dark color */
+  color: white;
+  border: 2px solid #8f94fb;
+}
+
+.tab:hover {
+  background-color: #8f94fb;
+  color: white;
+
+}
+
+.auth-form {
+  margin-top: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px; /* More space between form groups */
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  margin-bottom: 10px; /* Spacing between input fields */
+  transition: all 0.3s ease;
+}
+
+input:focus {
+  border-color: #8f94fb;
+  outline: none;
+}
+
+.submit-button {
+  width: 100%;
+  padding: 12px;
+  background-color: #4e4376;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.submit-button:hover {
+  background-color: #8f94fb;
+}
+
+.toggle-text {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 16px;
+}
+
+.toggle-link {
+  color: #4e4376;
+  cursor: pointer;
+}
+
+.forgot-password {
+  float: right;
+  color: #4e4376;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}
+
+.extra-options {
+  margin-bottom: 15px;
+}
+
+.welcome-message {
+  text-align: center;
+  font-size: 24px;
+  color: #4e4376;
+}
+
+/* Increased contrast for dark theme */
+.light .auth-container {
+  background-color: rgba(255, 255, 255, 0.9); /* Lighter background for better contrast */
+  color: #333;
+}
+
+.dark .auth-container {
+  background-color: rgba(0, 0, 0, 0.8); /* Darker background for dark theme */
+  color: #f0f0f0; /* Lighter text for better visibility */
+}
+
+/* Adjusting text color for links and buttons */
+.light .submit-button {
+  background-color: #4e4376;
+}
+
+.dark .submit-button {
+  background-color: #8f94fb;
+}
+
+/* Adjust input fields for better visibility */
+.light input {
+  background-color: #fff;
+  color: #333;
+}
+
+.dark input {
+  background-color: #444;
+  color: #fff;
+}
+
+/* Adjust text color for links and buttons */
+.light .toggle-link, .light .forgot-password {
+  color: #4e4376;
+}
+
+.dark .toggle-link, .dark .forgot-password {
+  color: #8f94fb;
+}
+
+/* Background Circle Effects */
+.background-container {
+  text-align: center;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: floating 10s infinite ease-in-out;
+}
+
+.circle.small {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.2);
+  animation-delay: 2s;
+  top: 10%;
+  left: 15%;
+}
+
+.circle.medium {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.3);
+  animation-delay: 4s;
+  top: 50%;
+  left: 25%;
+}
+
+.circle.large {
+  width: 350px;
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.4);
+  animation-delay: 6s;
+  top: 30%;
+  left: 50%;
+}
+
+/* Floating Animation for Circles */
+@keyframes floating {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Adjust visibility for specific form texts */
+.toggle-text {
+  color: #333; /* Dark text for better visibility */
+}
+
+.toggle-link {
+  color: #333; /* Darker color for the "Not a member?" and "Already a member?" links */
+}
+
+.toggle-link:hover {
+  color: #8f94fb; /* Hover effect for links */
+}
+
+.welcome-message {
+  color: #333; /* Dark color for welcome message text */
+}
+
+/* Adjust 'Not a member?' and 'Already a member?' text for better visibility */
+.toggle-link, .toggle-text, .forgot-password {
+  color: #4e4376;
+}
+
+.light .toggle-link, .light .toggle-text, .light .forgot-password {
+  color: #4e4376;
+}
+
+.dark .toggle-link, .dark .toggle-text, .dark .forgot-password {
+  color: #8f94fb; /* Light blue for dark mode */
+}
+/* Add this in your App.css file */
+
+/* Heading container for 'Secure Portal' */
+.heading-container {
+  position: absolute;
+  top: 10px; /* Adjust top position */
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #4e4376; /* Background color */
+  padding: 20px 40px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+/* Heading text styles */
+.heading-text {
+  font-size: 32px;
+  color: white;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+/* Rest of your styles remain the same */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: backgroundAnimation 15s ease infinite;
+  transition: background 2s ease-in-out;  /* Add smooth transition to background */
+}
+
+/* Animation for background gradient shift */
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  }
+  50% {
+    background: linear-gradient(135deg, #2b5876, #4e4376);
+  }
+  100% {
+    background: linear-gradient(135deg, #4e54c8, #8f94fb);
+  }
+}
+
+/* Background Circle Effects */
+.background-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: floating 10s infinite ease-in-out;
+}
+
+.circle.small {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(255, 255, 255, 0.2);
+  animation-delay: 2s;
+  top: 10%;
+  left: 15%;
+}
+
+.circle.medium {
+  width: 250px;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.3);
+  animation-delay: 4s;
+  top: 50%;
+  left: 25%;
+}
+
+.circle.large {
+  width: 350px;
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.4);
+  animation-delay: 6s;
+  top: 30%;
+  left: 50%;
+}
+
+/* Floating Animation for Circles */
+@keyframes floating {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  50% {
+    transform: translateY(-30px) scale(1.1);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* The rest of your existing form styling... */
