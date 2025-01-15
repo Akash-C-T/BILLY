@@ -36,6 +36,11 @@ Feedback and Automation:
 1) The actions taken are monitored, 
 2) after a suspension the system observes how our user is behaving.
 Repeat offenders may be subject to harsher penalties like permanent account bans.
+
+
+
+
+
 ![Group 1](https://github.com/user-attachments/assets/ef580157-a048-43bd-b41a-9e7fc4665819)
 # Getting Started with Create React App
 
