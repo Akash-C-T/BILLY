@@ -1,3 +1,42 @@
+WorkFlow : Cyberbullying Detection System Using Firebase Authentication
+Firebase User Authentication
+User Login: User Log into login form through a web app.
+Firebase Authentication:
+Firebase now check whether email/password/Google/Facebook for credentials of that particular user.
+When their session is authenticated, Firebase provides a unique token for the session —an auth token— guaranteeing communication between client with quthenticated state and server.
+Login Session: Each user has to be logged→session → visit & Post comments on the platform.
+Input Comments:
+Using the platform, authorized (authenticated) users post comments.
+Any comments are then processed immediately.
+Comment Analysis:
+Google Perspective API:
+The posted comment is being sent to Google's Perspective API.
+This API was used to determine the toxicity level of a comment (eg: insults, threats, profanity).
+Toxicity Score:
+If the saying belongs to bullying or being inappropriate, it will be filtered and archived under that heading.
+Warnings System:
+The system also tracks the violations that show up for a given authenticated user account, one violation per toxic comment detected.
+Progressive Warning System:
+1st Offence – A Warning is issued to the User.
+2nd Violation: Additional warning to indicate the gravity of a violation.
+3rd+ Violation: Final Warning
+Upon Third Violation – User Suspension
+The system may:
+7- Account suspension for a period of 7 days
+Logs the suspension to user profile in Firebase database
+Suspend the user directly from posting or interacting with comment section
+Notify User ( Email / In-App Messages): The user is notified of their suspension.
+Database Integration:
+Firebase Database:
+User profiles, violations history and suspension details.
+Monitors history of all comments flagged for review
+Google Perspective Feedback:
+Admins can also check flagged comments for tuning toxicity thresholds or reviewing appeals.
+Feedback and Automation:
+1) The actions taken are monitored, 
+2) after a suspension the system observes how our user is behaving.
+Repeat offenders may be subject to harsher penalties like permanent account bans.
+![Group 1](https://github.com/user-attachments/assets/ef580157-a048-43bd-b41a-9e7fc4665819)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -69,5 +108,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
-![Group 1](https://github.com/user-attachments/assets/ef580157-a048-43bd-b41a-9e7fc4665819)
+
 
